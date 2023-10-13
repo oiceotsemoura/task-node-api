@@ -1,7 +1,16 @@
 {
   "extends": "@tsconfig/node16/tsconfig.json",
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": "./src",
+    "paths": {
+      "@controller/*": ["controller/*"],
+      "@service/*": ["service/*"],
+      "@model/*": ["model/*"],
+      "@repository/*": ["repository/*"],
+      "@utils/*": ["utils/*"],
+      "@interfaces/*": ["interfaces/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules"]

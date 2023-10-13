@@ -1,23 +1,38 @@
 {
-  "name": "nodejs-typescript-skeleton",
+  "name": "tasks-project",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./src/index.ts",
   "license": "MIT",
+  "_moduleAliases": {
+    "@controller": "dist/controller",
+    "@model": "dist/model",
+    "@repository": "dist/repository",
+    "@service": "dist/service",
+    "@utils": "dist/utils",
+    "@interfaces": "dist/interfaces"
+  },
   "scripts": {
-    "dev": "ts-node-dev --respawn src/index.ts",
-    "build": "tsc",
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css dist/",
+    "build": "yarn clean && tsc && yarn copy-files",
+    "dev": "nodemon ./src/index.ts",
     "lint": "eslint src/**/*.ts",
     "format": "eslint src/**/*.ts --fix",
-    "pretty": "prettier --write \"src/**/*.ts\""
+    "pretty": "prettier --write \"src/**/*.ts\"",
+    "start": "node ./dist/index.js"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",
+    "@types/body-parser": "^1.19.3",
+    "@types/express": "^4.17.18",
     "@types/node": "^17.0.21",
+    "@types/uuid": "^9.0.5",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
     "eslint": "^8.10.0",
     "prettier": "^2.5.1",
-    "ts-node-dev": "^1.1.8",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^4.5.5"
   },
   "husky": {
@@ -25,5 +40,13 @@
       "pre-commit": "yarn lint",
       "pre-push": "yarn test"
     }
+  },
+  "dependencies": {
+    "Express": "^3.0.1",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "module-alias": "^2.2.3",
+    "nodemon": "^3.0.1",
+    "uuid": "^9.0.1"
   }
 }
