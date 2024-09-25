@@ -8,9 +8,9 @@ export const createForm = async (form: IForm) => {
   const companyRegistrationUrl = (await uploadBase64ToCloudinary(form.companyRegistration)).secure_url;
   const newForm: IForm = {
     ...form,
-    bankInfo: bankInfoUrl + '.pdf',
-    purchaseLetter: purchaseLetterUrl + '.pdf',
-    companyRegistration: companyRegistrationUrl + '.pdf',
+    bankInfo: bankInfoUrl,
+    purchaseLetter: purchaseLetterUrl,
+    companyRegistration: companyRegistrationUrl,
   };
   const formCreated = await FormRepository.saveForm(newForm);
   return formCreated;
