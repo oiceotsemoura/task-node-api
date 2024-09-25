@@ -32,9 +32,9 @@ const createForm = async (form) => {
     const companyRegistrationUrl = (await (0, CloudinaryService_1.uploadBase64ToCloudinary)(form.companyRegistration)).secure_url;
     const newForm = {
         ...form,
-        bankInfo: bankInfoUrl + '.pdf',
-        purchaseLetter: purchaseLetterUrl + '.pdf',
-        companyRegistration: companyRegistrationUrl + '.pdf',
+        bankInfo: bankInfoUrl,
+        purchaseLetter: purchaseLetterUrl,
+        companyRegistration: companyRegistrationUrl,
     };
     const formCreated = await FormRepository.saveForm(newForm);
     return formCreated;
