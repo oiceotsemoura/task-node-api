@@ -8,7 +8,7 @@ const FormSchema = new mongoose_1.Schema({
     purchaseLetter: { type: String, required: true },
     companyRegistration: { type: String, required: true },
     bankInfo: { type: String, required: true },
-    observations: { type: String, required: true },
+    observations: { type: String },
     destinationCountry: { type: String, required: true },
     destinationPort: { type: String, required: true },
     product: { type: String, required: true },

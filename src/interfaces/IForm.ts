@@ -7,7 +7,7 @@ export interface IForm {
   destinationCountry: string;
   destinationPort: string;
   shipmentType: string;
-  observations: string;
+  observations?: string;
   purchaseLetter: string;
   companyRegistration: string;
   bankInfo: string;
