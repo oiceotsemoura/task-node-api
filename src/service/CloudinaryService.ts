@@ -6,7 +6,6 @@ const uploadBase64ToCloudinary = async (base64Data: string) => {
       format: 'pdf',
       resource_type: 'raw',
       access_mode: 'public',
-      upload_preset: 'pl2epxko',
     });
     return result;
   } catch (error) {

@@ -8,7 +8,6 @@ const uploadBase64ToCloudinary = async (base64Data) => {
             format: 'pdf',
             resource_type: 'raw',
             access_mode: 'public',
-            upload_preset: 'pl2epxko',
         });
         return result;
     }
