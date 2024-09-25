@@ -5,7 +5,6 @@ const Cloudinary_1 = require("../config/Cloudinary");
 const uploadBase64ToCloudinary = async (base64Data) => {
     try {
         const result = await Cloudinary_1.Cloudinary.uploader.upload(base64Data, {
-            format: 'pdf',
             resource_type: 'raw',
             access_mode: 'public',
         });
