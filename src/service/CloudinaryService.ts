@@ -3,8 +3,7 @@ import { Cloudinary } from '../config/Cloudinary';
 const uploadBase64ToCloudinary = async (base64Data: string) => {
   try {
     const result = await Cloudinary.uploader.upload(base64Data, {
-      format: 'pdf',
-      resource_type: 'raw',
+      resource_type: 'auto',
       access_mode: 'public',
     });
     return result;
